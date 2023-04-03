@@ -1,0 +1,15 @@
+---
+- hosts: ubuntu
+  become: true
+  tasks:
+  - name: update repository index
+    package:
+      update_cache: yes
+
+
+- hosts: centos
+  remote_user: root
+  tasks:
+  - name: update repository index
+    package:
+      update_cache: yes
